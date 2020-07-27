@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alert Box</title>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	   <!-- JS -->
+	   <script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+	   <script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
+	   <script type="text/javascript">
+	      
+	      $(document).ready(function(){
+			$('#res').click(function(){
+				alert($('#txtarea').val());
+
+			})
+		})
+	   </script>
+</head>
+<body>
+
+	  Text Area :
+	  <textarea id="txtarea"></textarea>
+	  <br>
+	  <button id="res">Show text</button>
+
+</body>
+</html>

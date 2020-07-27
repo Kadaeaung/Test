@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calculator</title>
+	<script type="text/javascript">
+		  function calculate()
+		  {
+               var first =0;
+               var second=0;
+               var sum=0;
+               var sub=0;
+               var div=0;
+               var mul=0;
+               first=parseInt(document.getElementById('fn').value);
+               second=parseInt(document.getElementById('sn').value);
+               sum=first+second;
+               sub=first-second;
+               mul=first*second;
+               div=first/second;
+               mod=first%second;
+
+               console.log(sum);
+               document.getElementById('sum').value=sum;
+               document.getElementById('sub').value=sub;
+               document.getElementById('mul').value=mul;
+               document.getElementById('div').value=div;
+               document.getElementById('mod').value=mod;
+		  }
+	</script>
+</head>
+<body>
+        first number
+        <input type="number" id="fn" name="txtf">
+        <br>
+        second number
+        <input type="number" id="sn" name="txts">
+        <br>
+        Result:
+
+        Sum<input type="number" id="sum" name="">
+        <br>
+          Sub<input type="number" id="sub" name="">
+        <br>
+          Mul<input type="number" id="mul" name="">
+
+        <br>
+          Div<input type="number" id="div" name="">
+        <br>
+          Mod<input type="number" id="mod" name="">
+        <br>
+         <button onclick="calculate()">Calculate</button>
+</body>
+</html>

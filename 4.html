@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+     <script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
+	<script type="text/javascript">
+		 $(document).ready(function(){
+			$('#cal').click(function(){
+				var first= parseInt($('#num1').val());
+				var second= parseInt($('#num2').val());
+				
+				var sum=first+second;
+				
+
+				console.log("sum"+sum);
+                  
+                 $('#id1').text('Total :'+sum);
+                 
+                
+                 
+                
+
+
+			})
+
+                 $('#clr').click(function(){
+                 	$('#num1').val("");
+                 	$('#num2').val("");
+                 	$("#id1").text("");
+
+                 })
+			
+		})
+		
+	</script>
+</head>
+<body>
+
+	<table border="1" cellpadding="1">
+		  <tr>
+		  	<td>first</td>
+		  	<td><input type="number" name="txtmoney" id="num1"></td>
+		  </tr>
+		  <tr>
+		  	<td>second</td>
+		  	<td><input type="number" name="txtinterest" id="num2"></td>
+
+		  </tr>
+		  
+
+		  <tr>
+		  	<td> <button id="cal">Calculate</button></td>
+		  	<td><button id="clr">Clear</button></td>
+		  </tr>
+
+
+	</table>
+	 
+	 <p id="id1"></p>
+   
+    
+ 
+
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script type="text/javascript" src="bootstrap/js/jquery.min.js"></script>
+     <script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js"></script>
+
+     <script type="text/javascript">
+     	  $(document).ready(function(){
+			$('#cal').click(function(){
+                      var win=3;
+                      var draws=1;
+                      var lose=0;
+                      var result=0;
+                      var w=$('#w').val();
+                      console.log('w'+w)
+                      var d=$('#d').val();
+                      console.log('d'+d)
+                      var l=$('#l').val();
+                      console.log('l'+l);
+                        
+                      
+                      	result=win*w
+                       $('#result').text("Result"+result);
+                       console.log('result'+result);
+                         
+                      	 result=result+(draws*d);
+                       $('#result').text("Result"+result);
+                      
+                      
+                       result=result+(lose*l);
+                      	
+                      	$('#result').text("Result"+result);
+
+                      	  console.log('result'+result);
+                      
+			})
+		})
+
+     </script>
+
+</head>
+<body>
+
+	Win: <input  id="w" type="numer" >
+	Draw <input  id="d" type="number" >
+	Lose <input  id="l" type="number">
+	<br>
+	<button id="cal">Start</button>
+	<button id="cls">Clear</button>
+
+	<p id="result"></p>
+
+
+</body>
+</html>
