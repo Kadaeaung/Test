@@ -1,99 +1,100 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Colender</title>
-	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-
-	<!-- JS -->
-	<script type="text/javascript" src="bootstrap/js/jquery.min.js">
-	</script>
-
-	<script type="text/javascript" src="bootstrap/js/bootstrap.bundle.min.js">
-	</script>
-
-	<link rel="stylesheet" type="text/css" href="style.css">
-
+	<title>Calender</title>
 </head>
-
 <body>
-<div class="container col-sm-4 col-md-7 col-lg-4 mt-5">
-    <div class="card">
-        <h3 class="card-header" id="dayn">Month July</h3>
-        <table class="table table-bordered table-responsive-sm" id="calendar">
-            <thead>
-            <tr>
-                <th>Sun</th>
-                <th>Mon</th>
-                <th>Tue</th>
-                <th>Wed</th>
-                <th>Thu</th>
-                <th>Fri</th>
-                <th>Sat</th>
-            </tr>
-            <tr>
-            	<th></th>
-                <th></th>
-                <th></th>
-                <th>1</th>
-                <th>2</th>
-                <th>3</th>
-                <th>4</th>
-
-            </tr>
-
-           <tr>
-           		<th>5</th>
-                <th>6</th>
-                <th>7</th>
-                <th>8</th>
-                <th>9</th>
-                <th>10</th>
-                <th>11</th>
-
-           </tr>
-
-           <tr>
-           		<th>12</th>
-                <th>13</th>
-                <th>14</th>
-                <th>15</th>
-                <th>16</th>
-                <th>17</th>
-                <th>18</th>
-           </tr>
-           <tr>
-           		<th>19</th>
-                <th>20</th>
-                <th>21</th>
-                <th>22</th>
-                <th>23</th>
-                <th>24</th>
-                <th>25</th>           		
-           </tr>
-           <tr>
-           		
-                <th>26</th>
-                <th>27</th>
-                <th>28</th>
-                <th>29</th>
-                <th>30</th>
-                <th>31</th>           		
-           </tr>
-
-            </thead>
-
-            <tbody id="calendar-body">
-
-            </tbody>
-        </table>
 
 
-        
+	<script type="text/javascript">
 
-   </div> 
-</div>
+		var bg="#FFFFE1"
 
+		var fs=2
 
+		var flg = 0;
+
+		M = new Array("January","February","March","April","May","June","July","August","September","October","November","December");
+		D = new Array("Sun","Mon","Tue","Wed","Thu","Fri","Sat");
+		function getBgn() 
+		{
+				pdy = new Date();        
+				pmo = pdy.getMonth();    
+				pyr = pdy.getYear();    
+				if (pyr < 2000)   
+				pyr = pyr + 1900; 
+				yr = yr1 = (pmo==0?pyr-1:pyr); 
+				mo = (pmo==0?11:pmo-1);  
+				
+				yr = pyr;              
+				mo = pmo;                
+				bgn = new Date(M[mo]+" 1,"+yr); 
+				Calendar();          
+				document.write('</TD><TD VALIGN=TOP>');
+				
+		}
+	function Calendar(){
+		dy = bgn.getDay();
+		yr = eval(yr);
+		d = "312831303130313130313031";
+		if (yr / 4 == Math.floor(yr / 4)) {
+			d = d.substring(0, 2) + "29" + d.substring(4, d.length);
+		}
+		pos = (mo * 2);
+		ld = eval(d.substring(pos, pos + 2));
+		document.write("<TABLE BORDER=1"
+			+ " BGCOLOR='" + bg
+			+ "'><TR><TD ALIGN=CENTER COLSPAN=7>"
+			+ "<FONT SIZE=" + fs + ">" + M[mo] + " " + yr
+			+ "</FONT></Td></Tr><Tr><Tr>");
+		for (var i = 0;i < 7;i ++) {
+			document.write("<TD ALIGN=CENTER>"
+				+"<FONT SIZE="+fs+">" + D[i] + "</FONT></TD>");
+		}
+		document.write("</Tr><Tr>");
+		ctr = 0;
+		for (var i = 0;i < 7; i++){
+			if (i < dy) {
+				document.write("<TD ALIGN=CENTER>"
+					+"<FONT SIZE=" + fs + "> </FONT>"
+					+"</TD>");
+			}
+			else {
+				ctr++;
+				document.write("<TD ALIGN=CENTER>"
+					+ "<FONT SIZE=" + fs + ">" + ctr + "</FONT>"
+					+ "</TD>");
+			}
+		}
+		document.write("</TR><TR>");
+		while (ctr < ld) {
+			for (var i = 0;i < 7; i++){
+				ctr++;
+				if (ctr > ld){
+					document.write("<TD ALIGN=CENTER>"
+						+ " </TD>");
+				}
+				else {
+					document.write("<TD ALIGN=CENTER>"
+						+ "<FONT SIZE=" + fs + ">" + ctr + "</FONT>"
+						+ "</TD>");
+				}
+			}
+			document.write("</TR><TR>");
+		}
+		document.write("</TR></TABLE>");
+	}
+
+	</script> 
+
+	<CENTER>
+		<P><B>JavaScript Calendar For Current Month</B>
+			<SCRIPT LANGUAGE="JavaScript">
+
+				getBgn();
+
+			</SCRIPT>
+		</CENTER>
 
 </body>
 </html>
